@@ -1,39 +1,127 @@
 \chapter{Soluzioni}
 \label{ch:soluzioni}
 
+\begin{soluzione}{ex:distrettuale_2023_3}
+    \begin{wrapfigure}{l}{0.5\textwidth}
+        \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+        \definecolor{uququq}{rgb}{0.25098039215686274,0.25098039215686274,0.25098039215686274}
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+        \clip(-.5,-1) rectangle (4.5,2.3);
+        \draw [line width=1pt,color=cqcqcq,fill=cqcqcq,fill opacity=1] (1,1) circle (1cm);
+        \draw [line width=1pt,color=cqcqcq,fill=cqcqcq,fill opacity=1] (3,1) circle (1cm);
+        \fill[line width=1pt,color=cqcqcq,fill=cqcqcq,fill opacity=1] (3,1) -- (1,1) -- (2,-0.7320508075688773) -- cycle;
+        \fill[line width=1pt,color=cqcqcq,fill=cqcqcq,fill opacity=1] (2,-0.7320508075688773) -- (0.5,0.13397459621556135) -- (1,1) -- cycle;
+        \fill[line width=1pt,color=cqcqcq,fill=cqcqcq,fill opacity=1] (2,-0.7320508075688773) -- (3.5,0.13397459621555896) -- (3,1) -- cycle;
+        \draw [line width=1pt,color=cqcqcq] (3,1)-- (1,1);
+        \draw [line width=1pt,color=cqcqcq] (1,1)-- (2,-0.7320508075688773);
+        \draw [line width=1pt,color=cqcqcq] (2,-0.7320508075688773)-- (3,1);
+        \draw [line width=1pt,color=cqcqcq] (2,-0.7320508075688773)-- (0.5,0.13397459621556135);
+        \draw [line width=1pt,color=cqcqcq] (0.5,0.13397459621556135)-- (1,1);
+        \draw [line width=1pt,color=cqcqcq] (1,1)-- (2,-0.7320508075688773);
+        \draw [line width=1pt,color=cqcqcq] (2,-0.7320508075688773)-- (3.5,0.13397459621555896);
+        \draw [line width=1pt,color=cqcqcq] (3.5,0.13397459621555896)-- (3,1);
+        \draw [line width=1pt,color=cqcqcq] (3,1)-- (2,-0.7320508075688773);
+        \draw [line width=1pt] (1,1) circle (1cm);
+        \draw [line width=1pt] (3,1) circle (1cm);
+        \draw [line width=1pt] (2,-0.7320508075688773)-- (0.5,0.13397459621556135);
+        \draw [line width=1pt] (2,-0.7320508075688773)-- (3.5,0.13397459621555896);
+        \draw [line width=.8pt,dash pattern=on 2pt off 2pt] (2,-5.161567540068593) -- (2,4.761305273089394);
+        \draw [line width=1pt] (0.5,0.13397459621556135)-- (1,1);
+        \draw [line width=1pt] (3.5,0.13397459621555896)-- (3,1);
+        \draw [line width=1pt] (1,1)-- (3,1);
+        \draw [line width=1pt] (2,-0.7320508075688773)-- (3,1);
+        \draw [line width=1pt] (1,1)-- (2,-0.7320508075688773);
+        \begin{scriptsize}
+        \draw [fill=black] (1,1) circle (1.5pt);
+        \draw[color=black] (1.0155133167916046,1.368724899184351) node {$O_1$};
+        \draw [fill=black] (3,1) circle (1.5pt);
+        \draw[color=black] (3.0091498637274614,1.3800523795646684) node {$O_2$};
+        \draw [fill=black] (2,-0.7320508075688773) circle (1.5pt);
+        \draw[color=black] (2.1482613548233416,-0.8288062945972126) node {$P$};
+        \draw [fill=black] (0.5,0.13397459621556135) circle (1.5pt);
+        \draw[color=black] (0.3,-.1) node {$A$};
+        \draw [fill=black] (3.5,0.13397459621555896) circle (1.5pt);
+        \draw[color=black] (3.7,-.1) node {$C$};
+        \draw [fill=black] (2,1) circle (1.5pt);
+        \draw[color=black] (2.2,1.2) node {$B$};
+        \end{scriptsize}
+        \end{tikzpicture}
+    \end{wrapfigure}
+
+    \textbf{Dati:}
+
+    $\overline{O_1A} = \overline{O_2A} = 1 \text{cm}$
+
+    $O_1\hat{P}O_2 = 60^\circ$
+
+    \textbf{Richiesta:}
+
+    Area ombreggiata
+
+    \bigskip
+    Tenendo presente che le due circonferenze sono congruenti (hanno infatti lo stesso raggio), per il teorema
+    delle tangenti sappiamo che $PA \cong PB \cong PC$ e $PO_1 \cong PO_2$.
+    E i triangoli $PAO_1$, $PBO_1$, $PBO_2$ e $PC=_2$ sono tutti congruenti (oltre che rettangoli).
+
+    Dal momento che $PO_1 \cong PO_2$, il triangolo $O_1 P O_2$ è isoscele.
+    Inoltre l'angolo $O_1\hat{P}O_2$ ha ampiezza $60^\circ$, quindi $O_1 P O_2$ è equilatero, di lato 2.
+    L'altezza $PB$ di questo triangolo è lunga $\sqrt{3}$.
+    
+    L'area del quadrilatero $PAO_1 O_2 C$ può essere calcolata come doppio dell'area del triangolo $O_1 P O_2$:
+    \begin{equation*}
+        A_{PAO_1 O_2 C} = 2 A_{O_1 P O_2} = 2 \cdot \dfrac{\overline{O_1 O_2} \cdot \overline{PB}}{2} = 
+        2 \cdot \dfrac{2 \cdot \sqrt{3}}{2} = 2\sqrt {3}
+    \end{equation*}
+
+    Non rimane che calcolare le aree dei settori circolari che completano la figura.
+
+    Visto che il triangolo $O_1 P O_2$ è equilatero, l'angolo $PO_1 B$ ha ampiezza $60^\circ$.
+    Quindi, per congruenza, anche l'angolo $P O_1 A$ ha ampiezza $60^\circ$.
+    Quindi $AO_1 B = 120^\circ$.
+    Ciascun settore circolare, quindi, è $\frac{2}{3}$ dell'intero cerchio.
+
+    L'area del cerchio (di raggio 1) è $\pi$, quindi due settori circolari pari a $\frac{2}{3}$ del cerchio hanno
+    in totale area $\frac{4}{3}\pi$.
+
+    Quindi l'area totale è $\frac{4}{3}\pi + 2\sqrt {3}$.
+
+   Risposta \textbf{A}.
+\end{soluzione}
+
 \begin{soluzione}{ex:distrettuale_2023_10}
 
-\definecolor{zzttqq}{rgb}{0.6,0.2,0}
-\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
-
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.4cm,y=.4cm]
-\clip(-1,-1) rectangle (14,8);
-\fill[line width=1pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (0,0) -- (12,0) -- (12.666666666666666,5.962847939999441) -- (0.6666666666666661,5.962847939999441) -- cycle;
-\draw [line width=1pt] (0,0)-- (12,0);
-\draw [line width=1pt] (0,0)-- (12.666666666666666,5.962847939999441);
-\draw [line width=1pt] (0,0)-- (6.666666666666665,5.962847939999441);
-%\draw [line width=1pt] (0,0)-- (1.3333333333333317,11.925695879998878);
-%\draw [line width=1pt] (1.3333333333333317,11.925695879998878)-- (13.333333333333332,11.92569587999888);
-%\draw [line width=1pt] (13.333333333333332,11.92569587999888)-- (12,0);
-\draw [line width=1pt] (0.6666666666666661,5.962847939999441)-- (12.666666666666666,5.962847939999441);
-\draw [line width=1pt] (12,0)-- (6.666666666666665,5.962847939999441);
-\draw [line width=1pt,color=zzttqq] (0,0)-- (12,0);
-\draw [line width=1pt,color=zzttqq] (12,0)-- (12.666666666666666,5.962847939999441);
-\draw [line width=1pt,color=zzttqq] (12.666666666666666,5.962847939999441)-- (0.6666666666666661,5.962847939999441);
-\draw [line width=1pt,color=zzttqq] (0.6666666666666661,5.962847939999441)-- (0,0);
-\begin{scriptsize}
-\draw [fill=uuuuuu] (0,0) circle (1pt);
-\draw[color=black] (-0.5103139333868644,-0.09958656484186007) node {$A$};
-\draw [fill=uuuuuu] (12,0) circle (1pt);
-\draw[color=black] (12.54516265250897,0.1789302689905845) node {$B$};
-\draw [fill=uuuuuu] (12.666666666666666,5.962847939999441) circle (1pt);
-\draw[color=black] (13.137010924402915,6.132227592159087) node {$C$};
-\draw [fill=uuuuuu] (0.6666666666666661,5.962847939999441) circle (1pt);
-\draw[color=black] (0.2207927554233024,6.758890468282088) node {$D$};
-\draw [fill=uuuuuu] (6.666666666666665,5.962847939999441) circle (1pt);
-\draw[color=black] (6.59186532934047,6.793705072511144) node {$M$};
-\end{scriptsize}
-\end{tikzpicture}
+    \begin{wrapfigure}{l}{0.5\textwidth}
+        \definecolor{zzttqq}{rgb}{0.6,0.2,0}
+        \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.4cm,y=.4cm]
+        \clip(-1,-.4) rectangle (14,7);
+        \fill[line width=1pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (0,0) -- (12,0) -- (12.666666666666666,5.962847939999441) -- (0.6666666666666661,5.962847939999441) -- cycle;
+        \draw [line width=1pt] (0,0)-- (12,0);
+        \draw [line width=1pt] (0,0)-- (12.666666666666666,5.962847939999441);
+        \draw [line width=1pt] (0,0)-- (6.666666666666665,5.962847939999441);
+        %\draw [line width=1pt] (0,0)-- (1.3333333333333317,11.925695879998878);
+        %\draw [line width=1pt] (1.3333333333333317,11.925695879998878)-- (13.333333333333332,11.92569587999888);
+        %\draw [line width=1pt] (13.333333333333332,11.92569587999888)-- (12,0);
+        \draw [line width=1pt] (0.6666666666666661,5.962847939999441)-- (12.666666666666666,5.962847939999441);
+        \draw [line width=1pt] (12,0)-- (6.666666666666665,5.962847939999441);
+        \draw [line width=1pt,color=zzttqq] (0,0)-- (12,0);
+        \draw [line width=1pt,color=zzttqq] (12,0)-- (12.666666666666666,5.962847939999441);
+        \draw [line width=1pt,color=zzttqq] (12.666666666666666,5.962847939999441)-- (0.6666666666666661,5.962847939999441);
+        \draw [line width=1pt,color=zzttqq] (0.6666666666666661,5.962847939999441)-- (0,0);
+        \begin{scriptsize}
+        \draw [fill=uuuuuu] (0,0) circle (1pt);
+        \draw[color=black] (-0.5103139333868644,-0.09958656484186007) node {$A$};
+        \draw [fill=uuuuuu] (12,0) circle (1pt);
+        \draw[color=black] (12.54516265250897,0.1789302689905845) node {$B$};
+        \draw [fill=uuuuuu] (12.666666666666666,5.962847939999441) circle (1pt);
+        \draw[color=black] (13.137010924402915,6.132227592159087) node {$C$};
+        \draw [fill=uuuuuu] (0.6666666666666661,5.962847939999441) circle (1pt);
+        \draw[color=black] (0.2207927554233024,6.758890468282088) node {$D$};
+        \draw [fill=uuuuuu] (6.666666666666665,5.962847939999441) circle (1pt);
+        \draw[color=black] (6.59186532934047,6.793705072511144) node {$M$};
+        \end{scriptsize}
+        \end{tikzpicture}
+    \end{wrapfigure}
 
     \textbf{Dati:}
 
