@@ -1,0 +1,75 @@
+%! Class = quimatematica
+%! Author = Claudio Signorini
+%! Date = 06/02/2023
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{quimatematica}[2023/02/06 Template per le dispense di Qui Matematica]
+
+\RequirePackage[framemethod=TikZ]{mdframed}
+%\RequirePackage{amsthm}
+\RequirePackage{ifthen}
+
+\mdfdefinestyle{definitionstyle}{%
+	linecolor=green,linewidth=2pt,%
+	frametitlerule=true,%
+	frametitlebackgroundcolor=green!20,%
+	innertopmargin=\topskip,
+}
+
+\mdfdefinestyle{theoremstyle}{%
+	linecolor=red,linewidth=2pt,%
+	frametitlerule=true,%
+	frametitlebackgroundcolor=red!20,%
+	innertopmargin=\topskip,
+	subtitlebelowline=false,subtitleaboveline=false,
+	subtitlebackgroundcolor=red!10,
+}
+
+\mdfdefinestyle{exercisestyle}{%
+	linecolor=blue,linewidth=2pt,%
+	frametitlerule=true,%
+	frametitlebackgroundcolor=blue!20,%
+	innertopmargin=\topskip,
+	subtitlebelowline=false,subtitleaboveline=false,
+	subtitlebackgroundcolor=blue!10,
+}
+
+\mdtheorem[style=definitionstyle]{definizione}{Definizione}[chapter]
+\mdtheorem[style=theoremstyle]{teorema}{Teorema}[chapter]
+
+%\mdtheorem[style=exercisestyle]{esercizio}{Esercizio}[chapter]
+
+%\theoremstyle{definition}
+%\newtheorem{esercizio}[chapter]{Esercizio}
+
+\newcounter{esercizio}[chapter]
+\newenvironment{esercizio}[1][]
+    {\refstepcounter{esercizio}\par\medskip
+   \noindent\textbf{Esercizio~\theesercizio\ifthenelse{\equal{#1}{}}{}{:~#1}.}\par}
+    {\bigskip}
+
+%\newmdenv[linecolor=red,linewidth=2pt]{dimostrazione}
+%\newmdenv[
+%	subtitleaboveskip=0,
+%	linecolor=blue,linewidth=2pt,
+%	subtitlebelowline=false,subtitleaboveline=false,
+%	subtitlebackgroundcolor=blue!20,
+%]{soluzione}
+
+\newenvironment{soluzionenonum}
+    {\par\medskip
+   \noindent\textbf{Soluzione.}\par}
+    {\begin{center}$\square\quad\square\quad\square$\end{center}\bigskip}
+
+\newenvironment{soluzione}[1]
+    {\par\medskip
+   \noindent\textbf{Soluzione esercizio~\ref{#1}.}\par}
+    {\begin{center}$\square\quad\square\quad\square$\end{center}\bigskip}
+
+\newcommand{\Z}[0]{\ensuremath{ \mathbb{Z} }}
+\newcommand{\valoreassoluto}[1]{\ensuremath{ \lvert #1 \rvert }}
+\newcommand{\divisore}[0]{\ensuremath{ \mid }}
+\newcommand{\sse}[0]{\ensuremath{ \quad\Longleftrightarrow\quad }}
+\newcommand{\allora}[0]{\ensuremath{ \quad\Longrightarrow\quad }}
+\newcommand{\modulo}[0]{\ensuremath{ \bmod }}
+\newcommand{\congruenti}[3]{\ensuremath{ #1 \equiv #2 \quad\bmod #3 }}

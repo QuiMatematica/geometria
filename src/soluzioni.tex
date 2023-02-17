@@ -1,0 +1,111 @@
+\chapter{Soluzioni}
+\label{ch:soluzioni}
+
+\begin{soluzione}{ex:distrettuale_2023_10}
+
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.4cm,y=.4cm]
+\clip(-1,-1) rectangle (14,8);
+\fill[line width=1pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (0,0) -- (12,0) -- (12.666666666666666,5.962847939999441) -- (0.6666666666666661,5.962847939999441) -- cycle;
+\draw [line width=1pt] (0,0)-- (12,0);
+\draw [line width=1pt] (0,0)-- (12.666666666666666,5.962847939999441);
+\draw [line width=1pt] (0,0)-- (6.666666666666665,5.962847939999441);
+%\draw [line width=1pt] (0,0)-- (1.3333333333333317,11.925695879998878);
+%\draw [line width=1pt] (1.3333333333333317,11.925695879998878)-- (13.333333333333332,11.92569587999888);
+%\draw [line width=1pt] (13.333333333333332,11.92569587999888)-- (12,0);
+\draw [line width=1pt] (0.6666666666666661,5.962847939999441)-- (12.666666666666666,5.962847939999441);
+\draw [line width=1pt] (12,0)-- (6.666666666666665,5.962847939999441);
+\draw [line width=1pt,color=zzttqq] (0,0)-- (12,0);
+\draw [line width=1pt,color=zzttqq] (12,0)-- (12.666666666666666,5.962847939999441);
+\draw [line width=1pt,color=zzttqq] (12.666666666666666,5.962847939999441)-- (0.6666666666666661,5.962847939999441);
+\draw [line width=1pt,color=zzttqq] (0.6666666666666661,5.962847939999441)-- (0,0);
+\begin{scriptsize}
+\draw [fill=uuuuuu] (0,0) circle (1pt);
+\draw[color=black] (-0.5103139333868644,-0.09958656484186007) node {$A$};
+\draw [fill=uuuuuu] (12,0) circle (1pt);
+\draw[color=black] (12.54516265250897,0.1789302689905845) node {$B$};
+\draw [fill=uuuuuu] (12.666666666666666,5.962847939999441) circle (1pt);
+\draw[color=black] (13.137010924402915,6.132227592159087) node {$C$};
+\draw [fill=uuuuuu] (0.6666666666666661,5.962847939999441) circle (1pt);
+\draw[color=black] (0.2207927554233024,6.758890468282088) node {$D$};
+\draw [fill=uuuuuu] (6.666666666666665,5.962847939999441) circle (1pt);
+\draw[color=black] (6.59186532934047,6.793705072511144) node {$M$};
+\end{scriptsize}
+\end{tikzpicture}
+
+    \textbf{Dati:}
+
+    $ABCD$ parallelogramma
+
+    $BM$ bisettrice di $\hat{ABC}$
+
+    $M$ punto medio di $CD$
+
+    $\overline{BC} = 6$
+
+    $\overline{AC} = 14$
+
+    \textbf{Richiesta:}
+
+    $\overline{AM}$
+
+    \bigskip
+    Innanzitutto una considerazione sulla figura.
+    L'angolo interno al parallelogramma $B$ potrebbe essere acuto od ottuso.
+    A un certo punto della soluzione risulterà evidente che tale angolo deve essere ottuso.
+
+    Gli angoli $A\hat{B}M$ e $\hat{BMC}$ sono alterni interni per le parallele $AB$ e $CD$ tagliate dalla
+    trasversale $BM$;
+    quindi sono congruenti.
+    Pertanto per il teorema inverso dei triangoli isosceli, i segmenti $BC$ e $CM$ sono congruenti:
+    $\overline{BC} = \overline{CM} = 6$.
+
+    $M$ è il punto medio di $CD$, quindi $\overline{CD} = 2 \overline{CM} = 2 \cdot 6 = 12$.
+    Come pure $\overline{AB} = \overline{CD} = 12$.
+
+    Chiamo: $\alpha = \hat{DAB}$, $\beta = \hat{ABC}$.
+    Dal momento che $ABCD$ è un parallelogramma, risulta $\alpha + \beta = \pi$.
+    Lo vediamo anche nel triangolo isoscele $BCM$, dove i due angoli congruenti sono pari a $\frac{\beta}{2}$, mentre
+    il terzo angolo interno è $\alpha$.
+
+    Anche il triangolo $ADM$ è isoscele, perché $\overline{AD} = \overline{DM} = 6$.
+    L'angolo interno in $D$ è $\beta$, quindi gli angoli alla base sono $\frac{\alpha}{2}$.
+
+    Determino ora l'ampiezza dell'angolo $\hat{AMB}$, partendo dall'angolo piatto $\hat{CMD}$.
+    \begin{align*}
+        \hat{AMB} &= \hat{CMD} - \hat{CMB} - \hat{AMD} = \\
+        &= \pi - \frac{\beta}{2} - \frac{\alpha}{2} = \\
+        &= \pi - \biggl(\frac{\beta}{2} + \frac{\alpha}{2} \biggr) = \\
+        &= \pi - \frac{\pi}{2} = \\
+        &= \frac{\pi}{2}
+    \end{align*}
+
+    Quindi il triangolo $AMB$ è rettangolo.
+
+    Ora utilizzo il teorema del coseno per ottenere informazioni sull'angolo interno $\hat{ABC} = \beta$:
+    \begin{gather*}
+        \overline{AB}^2 + \overline{BC}^2 - 2 \cdot \overline{AB} \cdot \overline{BC} \cdot \cos \beta = \overline{AC}^2 \\
+        12^2 + 6^2 - 2 \cdot 12 \cdot 6 \cdot \cos \beta = 14^2 \\
+        144 + 36 - 144 \cos \beta = 196 \\
+        -144 \cos \beta = 16 \\
+        \cos \beta = -\dfrac{16}{144} \\
+        \cos \beta = -\dfrac{1}{9}
+    \end{gather*}
+
+    Ora posso calcolare $\overline{AM}$ in quanto cateto del triangolo rettangolo $AMB$, di cui conosco l'ipotenusa
+    $\overline{AB} = 12$ e l'angolo $\hat{ABM} = \frac{\beta}{2}$.
+    Avrò bisogno delle formule di bisezione.
+    \begin{align*}
+        \overline{AM} &= \overline{AB} \cdot \sin \frac{\beta}{2} = \\
+        &= \overline{AB} \cdot \sqrt {\dfrac{1 - \cos \beta}{2}} = \\
+        &= 12 \cdot \sqrt {\dfrac{1 + \frac{1}{9}}{2}} = \\
+        &= 12 \cdot \sqrt {\dfrac{10}{9} \cdot \dfrac{1}{2}} = \\
+        &= 12 \cdot \sqrt {\dfrac{5}{9}} = \\
+        &= \dfrac{12}{3} \sqrt {5} = \\
+        &= 4 \sqrt {5}
+    \end{align*}
+
+    Risposta \textbf{C}.
+\end{soluzione}
