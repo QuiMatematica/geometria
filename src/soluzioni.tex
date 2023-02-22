@@ -172,6 +172,14 @@
 
     Quindi il triangolo $AMB$ è rettangolo.
 
+    Seguono quattro soluzioni diverse:
+    nella prima si utilizza la trigonometria, nella seconda la formula di Erone e un'equazione biquadratica,
+    nella terza ancora la formula di Erone e un sistema simmetrico,
+    nella quarta invece si utilizza il teorema di Pitagora e un semplice sistema di quarto grado.
+
+    \bigskip
+    \textbf{Prima soluzione.}
+
     Ora utilizzo il teorema del coseno per ottenere informazioni sull'angolo interno $\hat{ABC} = \beta$:
     \begin{gather*}
         \overline{AB}^2 + \overline{BC}^2 - 2 \cdot \overline{AB} \cdot \overline{BC} \cdot \cos \beta = \overline{AC}^2 \\
@@ -196,4 +204,144 @@
     \end{align*}
 
     Risposta \textbf{C}.
+
+    \bigskip
+    \textbf{Seconda soluzione, proposta da Francesco P.}
+
+    Chiamo $N$ il punto medio del lato $AB$ (non è segnato sulla figura).
+
+    $A_{ABCD} = 2A_{ANMD}$ poiché $A_{ANMD} + A_{BCMN} = A_{ABCD}$ e $ANMD \cong BCMN$.
+
+    $A_{ABCD} = 2A_{ABC}$ poiché $ABC \cong ACD$ e $A_{ABC} + A_{ACD} = A_{ABCD}$.
+    
+    Allora $A_{ANMD} = A_{ABC}$, e poiché $A_{AMD} = \frac{1}{2}A_{ANMD}$, si ha $A_{ABC} = 2A_{ADM}$.
+    
+    Chiamo $\overline{AM} = x > 0$.
+    Utilizzando la formula di Erone:
+    \begin{align*}
+        A_{ABC} &= \sqrt {p(p - AB)(p-BC)(p-AC)} = \\
+        &= \sqrt{16(16-12)(16-6)(16-14)} = \\
+        &= \sqrt {16 \cdot 4 \cdot 10 \cdot 2} = \\
+        &= 16 \sqrt {5} \\
+        A_{ADM}
+        &= \sqrt { \dfrac{\scriptstyle \overline{AD} + \overline{DM} + \overline{AM}}{\scriptstyle 2} \cdot
+        \dfrac{\scriptstyle \overline{AD} + \overline{DM} - \overline{AM}}{\scriptstyle 2} \cdot
+        \dfrac{\scriptstyle \overline{AD} - \overline{DM} + \overline{AM}}{\scriptstyle 2} \cdot
+        \dfrac{\scriptstyle -\overline{AD} + \overline{DM} + \overline{AM}}{\scriptstyle 2}} = \\
+        &= \sqrt {\dfrac{12 + x}{2}  \cdot \dfrac{12 - x}{2}  \cdot \dfrac{x}{2}  \cdot \dfrac{x}{2}} = \\
+        &= \dfrac{x}{4}\sqrt {144 - x^2}
+    \end{align*}
+
+    Risolviamo quindi l'equazione:
+    \begin{gather*}
+        16 \sqrt {5} = \dfrac{x}{4}\sqrt {144 - x^2} \\
+        1280 = \dfrac{x^2}{16} \cdot (144 - x^2) \\
+        5120 = x^2 \cdot (144 - x^2) \\
+        x^4 - 144 x^2 + 5120 = 0 \\
+        \dfrac{\Delta}{4} = 144^2 - 5120 = 5184 - 5120 = 64 \\
+        x^2 = -72 \pm \sqrt {64} = 72 \pm 8 \\
+        x^2 = 64 \lor x^2 = 80 \\
+        x = 8 \lor x = 4\sqrt {5}
+    \end{gather*}
+
+    $AM$ è la diagonale maggiore di $ANMD$, quindi $\overline{AM} = 4\sqrt {5}$ e $\overline{DN} = 8$.
+
+    \bigskip
+    \textbf{Terza soluzione.}
+
+    Chiamiamo $\overline{AM} = x$ e $\overline{BM} = y$.
+    I triangoli $ABC$ e $ABM$ sono equivalenti in quanto hanno la base in comune (il lato $AB$) e l'altezza in comune
+    (l'altezza del trapezio).
+    Possiamo calcolare l'area di $ABC$ con la formula di Erone (come nella soluzione precedente) e l'area di $ABM$
+    utilizzando i cateti (dal momento che $A\hat{M}B = \pi$).
+
+    Dobbiamo dunque risolvere il seguente sistema simmetrico:
+    \begin{gather*}
+        \begin{cases}
+            \overline{AM}^2 + \overline{BM}^2 = \overline{AB}^2 \\
+            \dfrac{\overline{AM} \cdot \overline{BM}}{2} = A_{ABC0}
+        \end{cases}
+        \\
+        \begin{cases}
+            x^2 + y^2 = 12^2 \\
+            \dfrac{xy}{2} = 16\sqrt {5}
+        \end{cases}
+        \\
+        \begin{cases}
+            (x + y)^2 - 2xy = 144 \\
+            xy = 32\sqrt{5}
+        \end{cases}
+        \\
+        \begin{cases}
+            (x+y)^2 = 144 + 64\sqrt {5} \\
+            xy = 32\sqrt {5}
+        \end{cases}
+        \\
+        \begin{cases}
+            x + y = 8 + 4\sqrt {5} \\
+            xy = 32\sqrt {5}
+        \end{cases}
+        \\
+        (x, y) = (8, 4\sqrt {5}) \lor (x,y) = (4\sqrt {5}, 8)
+    \end{gather*}
+
+    Considerando che $AM > BM$ si ha che $\overline{AM} = 4\sqrt {5}$.
+
+    \bigskip
+    \textbf{Quarta soluzione.}
+    Chiamiamo $H$ la proiezione del punto $C$ sulla retta $AB$ (non è segnata sul disegno).
+    Otteniamo così due triangoli rettangoli: $AHC$ e $BHC$.
+
+    Chiamiamo $\overline{BH} = b$ e $\overline{CH} = h$.
+    Possiamo così applicare il teorema di Pitagora ai due triangoli rettangoli e trovare le lunghezze $b$ e $h$.
+    \begin{gather*}
+        \begin{cases}
+            \overline{AH}^2 + \overline{CH}^2 = \overline{BC}^2 \\
+            \overline{BH}^2 + \overline{CH}^2 = \overline{AC}^2
+        \end{cases}
+        \\
+        \begin{cases}
+            (12 + b)^2 + h^2 = 14^2 \\
+            b^2 + h^2 = 6^2
+        \end{cases}
+        \\
+        \begin{cases}
+            144 + 2b + b^2 + h^2 = 196 \\
+            b^2 + h^2 = 36
+        \end{cases}
+    \end{gather*}
+
+    Sottraendo membro a membro si ottiene:
+    \begin{gather*}
+        144 + 24b = 160 \\
+        24b = 16 \\
+        b = \dfrac{2}{3}
+    \end{gather*}
+    
+    Tornando alla seconda equazione si ha:
+    \begin{gather*}
+        \biggl(\dfrac{2}{3}\biggr)^2 + h^2 = 36 \\
+        \dfrac{4}{9} + h^2 = 36 \\
+        h^2 = \dfrac{320}{9} \\
+        h = \dfrac{8}{3}\sqrt {5}
+    \end{gather*}
+    
+    Chiamiamo ora $K$ la proiezione del punto $M$ sulla retta $AB$ (non è segnata sulla figura).
+    Abbiamo che $\overline{AK} = \overline{AB} + \overline{BH} - \overline{KH}$, con $\overline{KH} = \overline{MC} = 6$.
+    Quindi:
+    \begin{equation*}
+        \overline{AK} = 12 + \dfrac{2}{3} - 6 = \dfrac{20}{3}
+    \end{equation*}
+    
+    Applicando ora il teorema di Pitagora al triangolo rettangolo $AKM$ si ha:
+    \begin{align*}
+        \overline{AM} &= \sqrt {\overline{AK}^2 + \overline{KM}^2} = \\
+        &= \sqrt {\biggl(\dfrac{20}{3}\biggr)^2 + \biggl(\dfrac{8}{3}\sqrt {5}\biggr)^2} = \\
+        &= \sqrt {\dfrac{400}{9} + \dfrac{320}{9}} = \\
+        &= \sqrt {\dfrac{720}{9}} = \\
+        &= \sqrt {80} = \\
+        &= 4\sqrt {5}
+    \end{align*}
+    
+
 \end{soluzione}
